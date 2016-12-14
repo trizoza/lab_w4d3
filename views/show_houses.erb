@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hogwarts Houses</title>
+</head>
+<body>
+  
+  <h2>Pick A House</h2>
+  
+  <div class="houses">
+  <% for house in @houses %>  
+    <a href='/show_houses/<%= house.name %>'> <img src=<%= house.logo %>> </a>
+  <% end %>
+  </div>
+</body>
+</html>

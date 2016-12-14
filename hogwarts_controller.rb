@@ -12,3 +12,9 @@ get'/show_students' do
   @houses = House.all()
   erb(:show_students)
 end
+
+get '/show_houses' do
+  @houses = House.all()
+  erb(:show_houses)
+end
+
