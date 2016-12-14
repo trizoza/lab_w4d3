@@ -6,7 +6,7 @@ class House
 
   def initialize( options )
     @id = options['id'].to_i || nil
-    @name = options['first_name']
+    @name = options['name']
     @logo = options['logo']
   end
 
@@ -28,7 +28,7 @@ class House
   def self.find_by_id(id)
     sql = "
       SELECT * FROM houses
-      WHERE id = #{@id};
+      WHERE id = #{id};
     "
     house = SqlRunner.run(sql)[0]
     return house

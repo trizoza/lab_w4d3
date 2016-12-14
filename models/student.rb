@@ -25,13 +25,13 @@ class Student
   end
 
   def self.find_by_id(id)
-    sql = "SELECT * FROM students WHERE id = #{@id};"
+    sql = "SELECT * FROM students WHERE id = #{id};"
     student = SqlRunner.run(sql)[0]
     return student
   end
 
   def self.house(id)
-    sql = "SELECT house FROM students WHERE id = #{@id};"
+    sql = "SELECT name FROM houses WHERE id = #{id};"
     house = SqlRunner.run(sql)[0]
     return house
   end
@@ -40,5 +40,11 @@ class Student
     sql = "DELETE FROM students;"
     SqlRunner.run(sql)
   end
+
+ def self.house_name(id)
+   sql = "SELECT house.name FROM students WHERE id = #{id};"
+   house_name = SqlRunner.run(sql)[0]
+   return house_name
+ end
 
 end

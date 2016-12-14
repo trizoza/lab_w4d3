@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hogwarts Students</title>
+</head>
+<body>
+  <h2>Hogwarts Students</h2>
+  <p>Current Students are:</p>
+
+  <% for student in @students %>
+
+    <p>Name: <%= student.first_name() %> <%= student.last_name() %></p>
+    <p>Age: <%= student.age() %></p>
+    <p>House: <%= Student.house(student.house_id)['name'] %></p>
+
+  <% end %>
+
+</body>
+</html>
